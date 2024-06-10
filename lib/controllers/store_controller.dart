@@ -43,6 +43,7 @@ class StoreController extends GetxController {
 
   void storeStatusOpen(bool isOpen) {
     storeStatus(isOpen);
+    update();
   }
 
   updateFollowerList(List<String> list) {

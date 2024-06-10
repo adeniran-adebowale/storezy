@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:storezy/controllers/store_controller.dart';
 
-class ToggleStore extends StatefulWidget {
-  const ToggleStore({super.key});
+class ToggleStore extends GetView<StoreController> {
+  
 
-  @override
-  State<ToggleStore> createState() => _ToggleStoreState();
-}
-
-class _ToggleStoreState extends State<ToggleStore> {
+  
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return GetBuilder(builder: (StoreController store)=> Scaffold(
       appBar: AppBar(
         title: Text("Toggle Store"),
       ),
@@ -21,11 +19,14 @@ class _ToggleStoreState extends State<ToggleStore> {
               Text(
                   "A switch widget with a text field showing 'Is the store open?'"),
               Text(""),
-              Switch(value: false, onChanged: (value) {}),
+              Switch(value: store.storeStatus == true , onChanged: (value) {
+                store.storeStatusOpen(value);
+                Get.toNamed("/home");
+              }),
             ],
           ),
         ),
       ),
-    );
+    ));
   }
 }

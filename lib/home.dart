@@ -87,9 +87,9 @@ class Home extends GetView<StoreController> {
                         children: [
                           Flexible(
                             fit: FlexFit.tight,
-                            child: Text('Status:'),
+                            child: Text('Status: '),
                           ),
-                          Text('Open'),
+                          Text('${ store.storeStatus==true ? "Open" :"Close" }'),
                         ],
                       ),
                     ],
@@ -105,7 +105,7 @@ class Home extends GetView<StoreController> {
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: 5,
                       itemBuilder: (context, index) {
-                        return Text('11');
+                        return Text('${store.folllowerCount.toString()}');
                       },
                     )),
                 const SizedBox(

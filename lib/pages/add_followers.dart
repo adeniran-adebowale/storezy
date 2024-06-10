@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:storezy/controllers/store_controller.dart';
 import 'package:storezy/widgets/rounded_input.dart';
 
-class AddFollowers extends StatefulWidget {
-  const AddFollowers({super.key});
+class AddFollowers extends GetView<StoreController> {
+  int follower=0;
+  AddFollowers({super.key});
 
-  @override
-  State<AddFollowers> createState() => _AddFollowersState();
-}
-
-class _AddFollowersState extends State<AddFollowers> {
+  
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return GetBuilder(builder: (builder)=> Scaffold(
       appBar: AppBar(
         title: Text("Add Followers"),
       ),
@@ -30,7 +29,7 @@ class _AddFollowersState extends State<AddFollowers> {
                       SizedBox(
                         height: 50,
                         width: 300,
-                        child: RoundedInput(hintText: "Add Follower"),
+                        child: RoundedInput(hintText: "Add Follower(Numbers)", onSubmit: (p0) => follower=int.parse(p0),),
                       ),
                       SizedBox(
                         height: 50,
@@ -47,6 +46,6 @@ class _AddFollowersState extends State<AddFollowers> {
           ),
         ),
       ),
-    );
+    ));
   }
 }
