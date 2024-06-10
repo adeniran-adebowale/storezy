@@ -18,7 +18,7 @@ class StoreReviews extends Equatable {
   factory StoreReviews.fromJson(Map<String, dynamic> json) =>
       StoreReviews(name: json['name'], review: json['review']);
 
-  Map<String, dynamic> tojson() => {
+  Map<String, dynamic> toJson() => {
         'name': name,
         'review': review,
       };
