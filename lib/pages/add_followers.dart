@@ -39,6 +39,7 @@ class AddFollowers extends GetView<StoreController> {
                           if(follower!=''){
                             store.addNewFollower(follower);
                             store.updateFollowerCount();
+                            Get.toNamed('/home');
                           }
                         },
                         child: Text("Add Follower"),

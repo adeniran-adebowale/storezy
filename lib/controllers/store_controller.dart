@@ -39,6 +39,7 @@ class StoreController extends GetxController {
 
   updateFollowerCount() {
     folllowerCount(folllowerCount.value + 1);
+    update();
   }
 
   void storeStatusOpen(bool isOpen) {
@@ -48,14 +49,17 @@ class StoreController extends GetxController {
 
   updateFollowerList(List<String> list) {
     followerList.assignAll(list);
+    update();
   }
 
   addNewFollower(String name) {
     followerList.add(name);
+    update();
   }
 
   void addReview(StoreReviews storeReviews) {
     reviews.add(storeReviews);
+    update();
   }
 
   @override
