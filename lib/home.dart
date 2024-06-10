@@ -119,7 +119,7 @@ class Home extends GetView<StoreController> {
                       itemCount: 5,
                       itemBuilder: (context, index) {
                         return ListTile(
-                          title: Text('David'),
+                          title: Text('{David}'),
                           subtitle: Text('Am amazing store'),
                         );
                       },
