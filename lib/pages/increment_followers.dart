@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:storezy/controllers/store_controller.dart';
 import 'package:storezy/widgets/rounded_input.dart';
 
-class IncrementFollowers extends StatefulWidget {
-  const IncrementFollowers({super.key});
+class IncrementFollowers extends GetView<StoreController>  {
 
-  @override
-  State<IncrementFollowers> createState() => _IncrementFollowersState();
-}
 
-class _IncrementFollowersState extends State<IncrementFollowers> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return GetBuilder(builder: (StoreController store)=> Scaffold(
       appBar: AppBar(
         title: Text("Increment Followers"),
       ),
@@ -21,22 +18,26 @@ class _IncrementFollowersState extends State<IncrementFollowers> {
             padding: const EdgeInsets.all(15.0),
             child: Column(
               children: [
-                Text(
-                    "This should contain 3 text fields and a Floating Action Button"),
-               RoundedInput(hintText: "first Input"),
+                Text(""),
+               Text("Followers ${store.folllowerCount}"),
                SizedBox(height: 10,),
-               RoundedInput(hintText: "first Input"),
+               Text("Obx"),
                SizedBox(height: 10,),
-               RoundedInput(hintText: "first Input"),
+               Text("${store.folllowerCount}"),
               ],
             ),
           ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          store.incrementStoreFollowers();
+
+          store.update();
+
+        },
         child: Icon(Icons.add),
       ),
-    );
+    ));
   }
 }

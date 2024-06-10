@@ -39,6 +39,7 @@ class AddFollowers extends GetView<StoreController> {
                           if(follower!=''){
                             store.addNewFollower(follower);
                             store.updateFollowerCount();
+                            Get.snackbar("Follower Added", "New Follower,$follower , has been added",snackPosition: SnackPosition.TOP);
                             Get.toNamed('/home');
                           }
                         },

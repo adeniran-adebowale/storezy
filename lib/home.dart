@@ -103,7 +103,7 @@ class Home extends GetView<StoreController> {
                     body: ListView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      itemCount:store.followerList.length,
+                      itemCount:1,
                       itemBuilder: store.followerList.length>0 ? (context, index) {
                         return Text('${store.folllowerCount.toString()}');
                       } : (context, index) {

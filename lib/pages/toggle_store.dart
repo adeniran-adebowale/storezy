@@ -21,6 +21,7 @@ class ToggleStore extends GetView<StoreController> {
               Text(""),
               Switch(value: store.storeStatus == true , onChanged: (value) {
                 store.storeStatusOpen(value);
+                
                 Get.toNamed("/home");
               }),
             ],
