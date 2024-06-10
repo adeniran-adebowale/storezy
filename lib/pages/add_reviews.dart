@@ -23,11 +23,11 @@ class AddReviews extends GetView<StoreController>{
             padding: const EdgeInsets.all(15.0),
             child: Column(
               children: [
-               RoundedInput(hintText: "first Input", onSubmit: (txt)=>userName=txt,),
+               RoundedInput(hintText: "Add Username", onSubmit: (txt)=>userName=txt,),
             
                 SizedBox(height: 10,),
             
-               RoundedInput(hintText: "first Input",onSubmit: (txt)=>reviews=txt),
+               RoundedInput(hintText: "Add Your Review",onSubmit: (txt)=>reviews=txt),
                 SizedBox(height: 10,),
                 ElevatedButton(onPressed: () {
                   print(userName+" :  "+reviews);

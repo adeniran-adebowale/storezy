@@ -75,8 +75,8 @@ class Home extends GetView<StoreController> {
                             child: Text('Store followers:'),
                           ),
                           Text('With Obx:'),
-                          Text('11:'),
-                          Text('With GetBuilder 11:'),
+                          Text(store.followerList.length.toString()+" "),
+                          Text('With GetBuilder 11: '+store.followerList.length.toString()),
                         ],
                       ),
                       SizedBox(
@@ -103,9 +103,11 @@ class Home extends GetView<StoreController> {
                     body: ListView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      itemCount: 5,
-                      itemBuilder: (context, index) {
+                      itemCount:store.followerList.length,
+                      itemBuilder: store.followerList.length>0 ? (context, index) {
                         return Text('${store.folllowerCount.toString()}');
+                      } : (context, index) {
+                        return Text('No followers Yet');
                       },
                     )),
                 const SizedBox(
@@ -116,12 +118,17 @@ class Home extends GetView<StoreController> {
                     body: ListView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      itemCount: 5,
-                      itemBuilder: (context, index) {
+                      itemCount: store.reviews.length,
+                      itemBuilder: store.reviews.length>0 ? (context, index) {
                         return ListTile(
-                          title: Text('{David}'),
-                          subtitle: Text('Am amazing store'),
-                        );
+                          title: Text('${store.reviews[index].name }'),
+                          subtitle: Text('${store.reviews[index].review }'),
+                        ) ;
+                      } : (context, index) {
+                        return ListTile(
+                          title: Text(''),
+                          subtitle: Text('No Reviews Yet'),
+                        ) ;
                       },
                     )),
               ],
