@@ -47,7 +47,7 @@ class AddReviews extends GetView<StoreController>{
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: store.followerList.length,
                       itemBuilder: (context, index) {
-                        return Text('${store.reviews.length!=0 ? store.reviews[index].review : "No reviews Yet"}', );
+                        return Text('${store.reviews.length>0 ? store.reviews[index].review : "No reviews Yet"}', );
                       },
                     ),),
 

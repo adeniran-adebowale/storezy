@@ -24,6 +24,9 @@ class IncrementFollowers extends GetView<StoreController>  {
                Text("Obx"),
                SizedBox(height: 10,),
                Text("${store.folllowerCount}"),
+               BackButton(
+                color: Colors.white,
+               )
               ],
             ),
           ),
